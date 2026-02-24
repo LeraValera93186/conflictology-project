@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-dark: #2D3436;
+            --accent-color: #0984E3;
+            --bg-light: #F9FAFB;
+            --text-main: #2D3436;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #6C5CE7, #0984E3);
+            color: white;
+            border-radius: 0 0 40px 40px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+        .neuro-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .neuro-card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #E1F5FE;
+            padding: 20px;
+            border-radius: 10px;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        footer { text-align: center; padding: 40px; color: #636E72; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Анатомия Конфликта</h1>
+        <p class="subtitle">Как биология мозга и современная конфликтология помогают договариваться</p>
+    </div>
+</header>
+
+<div class="container">
+    
+    <section class="neuro-card">
+        <span class="step-badge">Нейробиология</span>
+        <h2>Почему мы «взрываемся»?</h2>
+        <p>Когда начинается конфликт, активируется <strong>миндалевидное тело (амигдала)</strong>. Она блокирует работу префронтальной коры (центра логики). </p>
+        <div class="highlight-box">
+            <strong>Правило 20 минут:</strong> Именно столько времени нужно мозгу, чтобы снизить уровень кортизола и вернуть способность к рациональному мышлению.
+        </div>
+    </section>
+
+    <section class="neuro-card">
+        <span class="step-badge">Трансформация</span>
+        <h2>От позиций к интересам</h2>
+        <p>Современный подход гласит: конфликт — это не столкновение людей, а столкновение неудовлетворенных потребностей.</p>
+        <div class="grid">
+            <div style="background: #F0F2F5; padding: 15px; border-radius: 10px;">
+                <strong>Позиция:</strong> "Я хочу, чтобы ты работал в офисе!" (Что мы требуем)
+            </div>
+            <div style="background: #D1FAE5; padding: 15px; border-radius: 10px;">
+                <strong>Интерес:</strong> "Мне важно чувствовать общность команды" (Почему это важно)
+            </div>
+        </div>
+    </section>
+
+    <section class="neuro-card">
+        <span class="step-badge">Алгоритм</span>
+        <h2>Метод NVC (Ненасильственное общение)</h2>
+        <ol>
+            <li><strong>Факты:</strong> Описание ситуации без оценок.</li>
+            <li><strong>Чувства:</strong> "Я чувствую растерянность..."</li>
+            <li><strong>Потребности:</strong> "Потому что мне важна ясность..."</li>
+            <li><strong>Просьба:</strong> Конкретное действие в утвердительной форме.</li>
+        </ol>
+    </section>
+
+</div>
+
+<footer>
+    Курс: Сложные коммуникации в 2024 году. Сделано с любовью к мозгу.
+</footer>
+
+</body>
+</html>
