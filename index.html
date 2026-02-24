@@ -3,137 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конфликт: Провал или Стимул?</title>
     <style>
         :root {
-            --primary-dark: #2D3436;
-            --accent-color: #0984E3;
-            --bg-light: #F9FAFB;
-            --text-main: #2D3436;
+            --primary-blue: #0984E3;
+            --soft-bg: #F4F7F6;
+            --text-dark: #2D3436;
+            --accent-red: #FF7675;
+            --accent-green: #55E6C1;
             --white: #FFFFFF;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-light);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--soft-bg);
             margin: 0;
             padding: 0;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         header {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0984E3 0%, #6C5CE7 100%);
+            color: white;
             text-align: center;
-            padding: 80px 0;
-            background: linear-gradient(135deg, #6C5CE7, #0984E3);
-            color: white;
-            border-radius: 0 0 40px 40px;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 50px;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        h1 { font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2; }
+        .subtitle { font-size: 1.3rem; opacity: 0.9; font-weight: 300; }
 
-        .neuro-card {
+        .content-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent-color);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
         }
 
-        .neuro-card h2 {
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-
-        .step-badge {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .highlight-box {
+        .neuro-note {
             background: #E1F5FE;
+            border-left: 6px solid var(--primary-blue);
             padding: 20px;
             border-radius: 10px;
-            font-style: italic;
-            margin: 20px 0;
+            margin: 25px 0;
+            font-size: 0.95rem;
         }
 
-        .grid {
+        .task-block {
+            border: 2px dashed var(--primary-blue);
+            background: #F0F7FF;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .reason-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+            margin-top: 20px;
         }
+
+        .image-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            background: var(--primary-blue);
+            color: white;
+            min-width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        footer { text-align: center; padding: 50px; color: #636E72; }
 
         @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
+            .reason-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
         }
-
-        footer { text-align: center; padding: 40px; color: #636E72; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container">
-        <h1>Анатомия Конфликта</h1>
-        <p class="subtitle">Как биология мозга и современная конфликтология помогают договариваться</p>
+        <h1>Конфликт — это провал или стимул к развитию?</h1>
+        <p class="subtitle">История о том, как Лера потеряла команду и что на этот счет думает нейробиология</p>
     </div>
 </header>
 
 <div class="container">
-    
-    <section class="neuro-card">
-        <span class="step-badge">Нейробиология</span>
-        <h2>Почему мы «взрываемся»?</h2>
-        <p>Когда начинается конфликт, активируется <strong>миндалевидное тело (амигдала)</strong>. Она блокирует работу префронтальной коры (центра логики). </p>
-        <div class="highlight-box">
-            <strong>Правило 20 минут:</strong> Именно столько времени нужно мозгу, чтобы снизить уровень кортизола и вернуть способность к рациональному мышлению.
+
+    <section class="content-card">
+        <h2>История Леры</h2>
+        <p>Лера руководит проектом по запуску детского образовательного центра. У нее была сильная команда, нацеленная на результат. Но через полгода она осталась у разбитого корыта. Почему?</p>
+        <div class="neuro-note">
+            <strong>Нейробиологическая справка:</strong> Когда мы сталкиваемся с недопониманием, наш мозг считывает это как угрозу статусу или безопасности. Включается "лимбический захват" — мы перестаем думать рационально и переходим в режим защиты.
         </div>
     </section>
 
-    <section class="neuro-card">
-        <span class="step-badge">Трансформация</span>
-        <h2>От позиций к интересам</h2>
-        <p>Современный подход гласит: конфликт — это не столкновение людей, а столкновение неудовлетворенных потребностей.</p>
-        <div class="grid">
-            <div style="background: #F0F2F5; padding: 15px; border-radius: 10px;">
-                <strong>Позиция:</strong> "Я хочу, чтобы ты работал в офисе!" (Что мы требуем)
+    <section class="content-card">
+        <h2>Объективные причины (Системные сбои)</h2>
+        <div class="reason-grid">
+            <div style="background:#F1F2F6; padding: 20px; border-radius:15px;">
+                <strong>1. Туман ответственности</strong>
+                <p><small>Кейс с SMM и заявками из ВК: когда границы задач размыты, мозг тратит лишнюю энергию на тревогу.</small></p>
             </div>
-            <div style="background: #D1FAE5; padding: 15px; border-radius: 10px;">
-                <strong>Интерес:</strong> "Мне важно чувствовать общность команды" (Почему это важно)
+            <div style="background:#F1F2F6; padding: 20px; border-radius:15px;">
+                <strong>2. Нереальные сроки</strong>
+                <p><small>Если команда не понимает дедлайн, когнитивная нагрузка зашкаливает, и мозг просто "саботирует" задачу.</small></p>
             </div>
         </div>
     </section>
 
-    <section class="neuro-card">
-        <span class="step-badge">Алгоритм</span>
-        <h2>Метод NVC (Ненасильственное общение)</h2>
-        <ol>
-            <li><strong>Факты:</strong> Описание ситуации без оценок.</li>
-            <li><strong>Чувства:</strong> "Я чувствую растерянность..."</li>
-            <li><strong>Потребности:</strong> "Потому что мне важна ясность..."</li>
-            <li><strong>Просьба:</strong> Конкретное действие в утвердительной форме.</li>
-        </ol>
+    <div class="image-container">
+        <p><em>Маркеры деструктивного и конструктивного конфликтов:</em></p>
+        <img src="image_44818b.png" alt="Маркеры конфликта">
+    </div>
+
+    <section class="content-card task-block">
+        <h3>Задание №1: Анализ ситуации</h3>
+        <p><strong>Цель:</strong> Научиться видеть связь между причиной и сутью ситуации.</p>
+        <p>Вспомните случай с администратором, где Лера спросила: <em>"Сложно было посмотреть инструкцию?"</em>. Какой это тип конфликта?</p>
+        <div style="background: white; padding: 15px; border-radius: 10px; border: 1px solid #D1D8E0;">
+            Ответ обоснуйте, опираясь на маркеры из схемы выше.
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Алгоритм решения (Нейро-Навигатор)</h2>
+        <div class="image-container">
+             <img src="image_448170.png" alt="Схема алгоритма">
+        </div>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div><strong>Осознать эмоции.</strong> Дайте себе 20 минут. Это время нужно, чтобы кортизол перестал блокировать префронтальную кору.</div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div><strong>Доброжелательный настрой.</strong> Исключите оценочные суждения. Мозг собеседника должен понять: "Я в безопасности".</div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div><strong>Дать выговориться.</strong> Выплеск эмоций снижает напряжение лимбической системы.</div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div><strong>Уточняющие вопросы.</strong> Переводим разговор в неокортекс: "Что произошло по шагам?".</div>
+        </div>
+    </section>
+
+    <section class="content-card task-block" style="border-color: var(--accent-green);">
+        <h3>Итоговое задание</h3>
+        <p>1. Вспомните недавний конфликт в вашей команде.<br>
+           2. Опишите его решение, прогнав через все 7 шагов алгоритма.</p>
+        <p><small>Критерий успеха: последовательность и переход от эмоций к To-Do листу.</small></p>
     </section>
 
 </div>
 
 <footer>
-    Курс: Сложные коммуникации в 2024 году. Сделано с любовью к мозгу.
+    © 2026 Прокачанный Лонгрид Леры. Наука о том, как договариваться.
 </footer>
 
 </body>
