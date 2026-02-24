@@ -6,109 +6,21 @@
     <title>Конфликт: Провал или Стимул?</title>
     <style>
         :root {
-            --primary-blue: #0984E3;
-            --soft-bg: #F4F7F6;
-            --text-dark: #2D3436;
-            --accent-red: #FF7675;
-            --accent-green: #55E6C1;
-            --white: #FFFFFF;
+            --primary: #0984E3; --text: #2D3436; --bg: #F4F7F6; --white: #FFFFFF;
+            --accent-red: #D63031; --accent-green: #00B894;
         }
-
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--soft-bg);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #0984E3 0%, #6C5CE7 100%);
-            color: white;
-            text-align: center;
-            border-radius: 0 0 50px 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 { font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2; }
-        .subtitle { font-size: 1.3rem; opacity: 0.9; font-weight: 300; }
-
-        .content-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 40px;
-        }
-
-        .neuro-note {
-            background: #E1F5FE;
-            border-left: 6px solid var(--primary-blue);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
-            font-size: 0.95rem;
-        }
-
-        .task-block {
-            border: 2px dashed var(--primary-blue);
-            background: #F0F7FF;
-            padding: 30px;
-            border-radius: 20px;
-        }
-
-        .reason-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .image-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .step-number {
-            background: var(--primary-blue);
-            color: white;
-            min-width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            font-weight: bold;
-        }
-
-        footer { text-align: center; padding: 50px; color: #636E72; }
-
-        @media (max-width: 600px) {
-            .reason-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2rem; }
-        }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #0984E3, #6C5CE7); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 30px 30px; }
+        .card { background: var(--white); padding: 30px; border-radius: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .goals { background: #E1F5FE; border-left: 5px solid var(--primary); padding: 20px; border-radius: 10px; }
+        .story-box { border-left: 4px solid #DFE6E9; padding-left: 20px; font-style: italic; color: #636E72; }
+        .task { background: #F0F7FF; border: 2px dashed var(--primary); padding: 25px; border-radius: 15px; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; }
+        .badge-neuro { background: #D1FAE5; color: #065F46; }
+        h2 { color: var(--primary); }
+        img { width: 100%; border-radius: 15px; margin: 20px 0; }
+        .criteria { font-size: 0.9rem; color: #636E72; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -116,83 +28,99 @@
 <header>
     <div class="container">
         <h1>Конфликт — это провал или стимул к развитию?</h1>
-        <p class="subtitle">История о том, как Лера потеряла команду и что на этот счет думает нейробиология</p>
+        <p>Кейс Леры: как за полгода растерять команду и чему это учит</p>
     </div>
 </header>
 
 <div class="container">
+    <section class="card goals">
+        <strong>После прочтения вы:</strong>
+        <ul>
+            <li>Узнаете, как отличать «рабочие» споры от личных драм.</li>
+            <li>Поймете, почему ваш мозг заставляет вас злиться (даже когда не хочется).</li>
+            <li>Получите пошаговый план, как перевести любой скандал в конструктив.</li>
+        </ul>
+    </section>
 
-    <section class="content-card">
+    <section class="card">
         <h2>История Леры</h2>
-        <p>Лера руководит проектом по запуску детского образовательного центра. У нее была сильная команда, нацеленная на результат. Но через полгода она осталась у разбитого корыта. Почему?</p>
-        <div class="neuro-note">
-            <strong>Нейробиологическая справка:</strong> Когда мы сталкиваемся с недопониманием, наш мозг считывает это как угрозу статусу или безопасности. Включается "лимбический захват" — мы перестаем думать рационально и переходим в режим защиты.
+        <p>Лера руководит проектом по запуску детского образовательного центра. У нее сильная команда, где каждый нацелен на результат. Почему тогда она осталась у разбитого корыта?</p>
+        <div class="story-box">
+            "Вечные споры о зонах ответственности и сроках... Каждый конфликт имеет объективные и личностные причины."
         </div>
     </section>
 
-    <section class="content-card">
-        <h2>Объективные причины (Системные сбои)</h2>
-        <div class="reason-grid">
-            <div style="background:#F1F2F6; padding: 20px; border-radius:15px;">
-                <strong>1. Туман ответственности</strong>
-                <p><small>Кейс с SMM и заявками из ВК: когда границы задач размыты, мозг тратит лишнюю энергию на тревогу.</small></p>
-            </div>
-            <div style="background:#F1F2F6; padding: 20px; border-radius:15px;">
-                <strong>2. Нереальные сроки</strong>
-                <p><small>Если команда не понимает дедлайн, когнитивная нагрузка зашкаливает, и мозг просто "саботирует" задачу.</small></p>
-            </div>
+    <section class="card">
+        <span class="badge badge-neuro">Системный уровень</span>
+        <h2>1. Объективные причины конфликтов</h2>
+        
+        <h3>А. Отсутствие прозрачности ответственности</h3>
+        <p>Лера с командой запустили рекламу. Заявки из ВК приходят SMM-щику, который не умеет их обрабатывать. Возникает конфликт: SMM-щик не хочет делать чужую работу, продажи висят.</p>
+
+        <h3>Б. Непонятные или нереальные сроки</h3>
+        <p>Лера поставила задачу к понедельнику. На встрече выяснилось, что 5 из 7 человек не подготовились, так как не поняли сроки. Результат — недопонимание и осадок.</p>
+
+        <h3>В. Нехватка ресурсов</h3>
+        <p>Решили раздавать листовки, но промоутеров нет. Команда отказывается выходить к школам сама. Эффективный канал простаивает, напряжение растет.</p>
+    </section>
+
+    <section class="card">
+        <span class="badge badge-neuro">Биологический уровень</span>
+        <h2>2. Личные причины конфликтов</h2>
+        <p><strong>Отношения внутри команды:</strong> Ежедневные летучки и стендапы вымотали одного из коллег. Он видит в этом "переливание из пустого в порожнее", отношения портятся.</p>
+        <p><strong>Эмоциональное выгорание:</strong> В состоянии нервного стимула человек реагирует агрессией даже на мелочь.</p>
+        <div class="story-box">
+            Кейс: Лера вымотана. Администратор ошибся в расписании. Вместо помощи Лера бросает: "Сложно было посмотреть инструкцию?".
         </div>
     </section>
 
-    <div class="image-container">
-        <p><em>Маркеры деструктивного и конструктивного конфликтов:</em></p>
+    <section class="card task">
+        <span class="badge" style="background: var(--primary); color: white;">Задание №1</span>
+        <h3>Соотнеси причины с ситуацией</h3>
+        <p><strong>Цель:</strong> Научиться находить корень проблемы.</p>
+        <p>Суть: Возьмите ситуации выше (SMM, листовки, расписание) и определите, какая из них вызвана <em>системой</em>, а какая — <em>эмоциями</em>.</p>
+        <div class="criteria">Критерий: Каждая причина должна соответствовать сути конфликта.</div>
+    </section>
+
+    <section class="card">
+        <h2>Деструктив vs Конструктив</h2>
         <img src="image_44818b.png" alt="Маркеры конфликта">
-    </div>
+        <p>Вспомним Леру и администратора. Негативный вопрос про инструкцию — это <strong>деструктивный тип</strong>. Эмоции превалируют.</p>
+        <p><strong>Как сделать конструктив?</strong> Выяснить, что вызвало сложности, вместе посмотреть инструкцию и исправить. Конфликт становится точкой роста.</p>
+    </section>
 
-    <section class="content-card task-block">
-        <h3>Задание №1: Анализ ситуации</h3>
-        <p><strong>Цель:</strong> Научиться видеть связь между причиной и сутью ситуации.</p>
-        <p>Вспомните случай с администратором, где Лера спросила: <em>"Сложно было посмотреть инструкцию?"</em>. Какой это тип конфликта?</p>
-        <div style="background: white; padding: 15px; border-radius: 10px; border: 1px solid #D1D8E0;">
-            Ответ обоснуйте, опираясь на маркеры из схемы выше.
+    <section class="card">
+        <h2>Алгоритм: как вырулить в конструктив?</h2>
+        <img src="image_448170.png" alt="Алгоритм">
+        <ol>
+            <li><strong>Осознать эмоции.</strong> Выдохните. Дайте мозгу 2 минуты, чтобы начать слышать.</li>
+            <li><strong>Доброжелательный настрой.</strong> Без оценок. Не "скажи нормально", а "расскажи, что случилось".</li>
+            <li><strong>Дать выговориться.</strong> Слушайте, не перебивая. Агрессия затухнет сама, если ее не подпитывать.</li>
+            <li><strong>Уточняющие вопросы.</strong> "Что произошло по шагам?" — включаем логику.</li>
+            <li><strong>Признать ситуацию.</strong> "Я понимаю, ситуация неприятная".</li>
+            <li><strong>Сформулировать проблему вместе.</strong> Ищем корень, а не виноватого.</li>
+            <li><strong>Предложить решения.</strong> Составляем To-Do List.</li>
+        </ol>
+    </section>
+
+    <section class="card task" style="border-color: var(--accent-green);">
+        <span class="badge" style="background: var(--accent-green); color: white;">Итоговое задание</span>
+        <h3>Выводим конфликт в решение</h3>
+        <p>1. Вспомни конфликт в своей команде (инициатор, суть, причина).<br>
+           2. Опиши шаги его решения по плану управления конфликтом выше.</p>
+        <div class="criteria">
+            * Опишите шаги подробно и последовательно.<br>
+            * Предложите конкретное решение.
         </div>
     </section>
 
-    <section class="content-card">
-        <h2>Алгоритм решения (Нейро-Навигатор)</h2>
-        <div class="image-container">
-             <img src="image_448170.png" alt="Схема алгоритма">
-        </div>
-
-        <div class="step">
-            <div class="step-number">1</div>
-            <div><strong>Осознать эмоции.</strong> Дайте себе 20 минут. Это время нужно, чтобы кортизол перестал блокировать префронтальную кору.</div>
-        </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <div><strong>Доброжелательный настрой.</strong> Исключите оценочные суждения. Мозг собеседника должен понять: "Я в безопасности".</div>
-        </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <div><strong>Дать выговориться.</strong> Выплеск эмоций снижает напряжение лимбической системы.</div>
-        </div>
-        <div class="step">
-            <div class="step-number">4</div>
-            <div><strong>Уточняющие вопросы.</strong> Переводим разговор в неокортекс: "Что произошло по шагам?".</div>
-        </div>
+    <section class="card">
+        <p>Лера не знала этих правил. Непонимание зон ответственности и неумение слушать привели к развалу проекта. Не повторяйте её ошибок.</p>
     </section>
-
-    <section class="content-card task-block" style="border-color: var(--accent-green);">
-        <h3>Итоговое задание</h3>
-        <p>1. Вспомните недавний конфликт в вашей команде.<br>
-           2. Опишите его решение, прогнав через все 7 шагов алгоритма.</p>
-        <p><small>Критерий успеха: последовательность и переход от эмоций к To-Do листу.</small></p>
-    </section>
-
 </div>
 
 <footer>
-    © 2026 Прокачанный Лонгрид Леры. Наука о том, как договариваться.
+    Курс разработан Лерой для Telegram-канала "Lera Kotik". 2026.
 </footer>
 
 </body>
