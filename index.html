@@ -3,214 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анатомия Конфликта: Кейс Леры</title>
+    <title>Конфликт: Провал или Стимул?</title>
     <style>
         :root {
-            --bg: #0F111A;
-            --card-bg: #1A1D29;
-            --primary: #6C5CE7;
-            --accent-red: #FF4757;
-            --accent-green: #2ED573;
+            --bg-deep: #0F172A;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
             --text-main: #E2E8F0;
-            --text-muted: #94A3B8;
+            --accent-blue: #38BDF8;
+            --accent-red: #FB7185;
+            --accent-green: #34D399;
         }
 
         body { 
             font-family: 'Helvetica Neue', Arial, sans-serif; 
             line-height: 1.6; 
             color: var(--text-main); 
-            background: var(--bg); 
+            background: var(--bg-deep); 
             margin: 0;
-            overflow-x: hidden;
+            background-attachment: fixed;
+            background-image: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 80% 70%, rgba(251, 113, 133, 0.05) 0%, transparent 40%);
         }
 
-        /* Героический блок с саспенсом */
-        header { 
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: linear-gradient(to bottom, rgba(15, 17, 26, 0.4), var(--bg)), 
-                        url('https://images.unsplash.com/photo-1552083375-1447ce886485?auto=format&fit=crop&w=1500&q=80'); /* Глубокий лес или темная текстура */
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
 
-        h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            font-weight: 800; 
-            margin-bottom: 10px; 
-            letter-spacing: -2px;
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
-        .title-accent { color: var(--accent-red); }
-
-        .subtitle { 
-            font-size: 1.2rem; 
-            color: var(--text-muted); 
-            max-width: 600px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        .container { max-width: 750px; margin: -100px auto 0; padding: 20px; position: relative; z-index: 10; }
+        header { text-align: center; padding: 80px 0; }
+        h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+        .hero-sub { font-size: 1.2rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 2px; }
 
         .card { 
-            background: var(--card-bg); 
+            background: var(--glass); 
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
             padding: 40px; 
-            border-radius: 2px; /* Острые углы добавляют строгости */
-            margin: 40px 0; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-top: 4px solid var(--primary);
+            border-radius: 30px; 
+            margin: 30px 0; 
         }
 
-        .story-box { 
-            font-family: Georgia, serif;
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text-main);
-            border-left: 2px solid var(--accent-red);
-            padding-left: 30px;
-            margin: 30px 0;
-            font-style: italic;
+        .neuro-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.95rem;
         }
 
-        .goals { background: #11141D; border: 1px solid var(--primary); }
-
-        h2 { font-size: 2rem; color: var(--text-main); margin-top: 0; letter-spacing: -1px; }
-
-        .badge { 
-            display: inline-block; 
-            padding: 2px 10px; 
-            font-size: 0.7rem; 
-            font-weight: 900; 
+        .neuro-label { 
+            display: block; 
+            font-weight: bold; 
+            color: var(--accent-blue); 
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            background: var(--accent-red);
+            font-size: 0.75rem; 
+            margin-bottom: 5px; 
         }
 
-        .task { border: 1px solid var(--accent-red); background: #1D1414; }
+        h2 { color: var(--accent-blue); font-size: 1.8rem; margin-top: 0; }
+        h3 { color: #fff; font-size: 1.4rem; }
 
-        details { 
-            background: rgba(255,255,255,0.05); 
-            border-radius: 4px; 
-            padding: 20px; 
-            margin-top: 20px; 
-            transition: all 0.3s ease;
+        .story-text { font-size: 1.1rem; color: #cbd5e1; }
+        .quote { font-style: italic; border-left: 2px solid var(--accent-red); padding-left: 20px; margin: 20px 0; color: #94a3b8; }
+
+        .task-card { 
+            border: 1px solid var(--accent-blue); 
+            background: rgba(56, 189, 248, 0.05); 
         }
-        
-        summary { font-weight: bold; color: var(--accent-red); cursor: pointer; list-style: none; text-transform: uppercase; font-size: 0.8rem; }
-        summary::-webkit-details-marker { display: none; }
 
-        img { width: 100%; filter: grayscale(100%) contrast(120%); transition: 0.5s; margin: 30px 0; border-radius: 0; }
-        img:hover { filter: grayscale(0%); }
+        details { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: var(--accent-blue); }
 
-        ol, ul { padding-left: 20px; color: var(--text-muted); }
-        li { margin-bottom: 15px; }
-        strong { color: var(--text-main); }
-
-        .summary-block { 
-            background: var(--primary); 
-            color: white; 
-            padding: 60px 40px; 
-            margin-top: 100px;
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        .step-list { list-style: none; padding: 0; }
+        .step-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .step-num { 
+            background: var(--accent-blue); 
+            color: var(--bg-deep); 
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold; 
+            flex-shrink: 0;
         }
-        .summary-block h3 { font-size: 2rem; margin-bottom: 30px; }
-        .summary-block li { color: white; opacity: 0.9; }
 
-        footer { text-align: center; padding: 60px; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px; }
+        footer { text-align: center; padding: 60px; opacity: 0.5; font-size: 0.8rem; }
 
-        /* Элемент декора - линия прогресса или шум */
-        .scanline {
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, var(--accent-red), transparent);
-            position: absolute;
-            opacity: 0.05;
-            pointer-events: none;
-        }
+        img { width: 100%; border-radius: 20px; margin: 20px 0; border: 1px solid var(--glass-border); }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="badge">Case Study №042</div>
-    <h1>Конфликт: Провал <br>или <span class="title-accent">Стимул?</span></h1>
-    <p class="subtitle">Анатомия одного разрушения</p>
-</header>
-
 <div class="container">
-    <section class="card goals">
-        <h2>Что пошло не так?</h2>
-        <ul>
-            <li><strong>Слепота системы:</strong> Почему мы не видим трещины, пока всё не рухнет.</li>
-            <li><strong>Биологический захват:</strong> Как амигдала крадет ваш интеллект.</li>
-            <li><strong>Протокол восстановления:</strong> 7 шагов к деэскалации.</li>
-        </ul>
+    <header>
+        <div class="hero-sub">Educational Case Study</div>
+        <h1>Конфликт — это провал или стимул к развитию?</h1>
+        <p>История о том, как Лера не решала конфликты и за полгода растеряла всю команду.</p>
+    </header>
+
+    <section class="card">
+        <p class="story-text">Лера руководит проектом по запуску детского образовательного центра. У нее сильная команда, где каждый нацелен на результат. Почему тогда она осталась у разбитого корыта?</p>
+        <div class="quote">Вечные споры о зонах ответственности и сроках...</div>
+        <p>Каждый конфликт имеет объективные и личностные причины. К первым относятся разногласия по рабочим вопросам, а ко вторым — несовпадение чувств, эмоций.</p>
     </section>
 
     <section class="card">
-        <div class="badge">Вводные данные</div>
-        <h2>История Леры</h2>
-        <div class="story-box">
-            «У Леры была сильная команда. Мечта любого руководителя. Но через полгода она стояла в пустом офисе. Всё началось с едва заметных мелочей...»
-        </div>
-        <p>Лера не заметила, как рабочие процессы превратились в поле боя. Когда система дает сбой, мозг ищет виноватых, а не решение.</p>
-    </section>
-
-    <section class="card">
-        <h2>01. Объективные причины</h2>
-        <p>Когда в системе нет прозрачности, конфликт — это лишь вопрос времени.</p>
-        <p><strong>Зоны ответственности:</strong> Кейс SMM и ВК. Если никто не знает, чей это мяч, он всегда будет падать на землю. <span class="title-accent">Результат:</span> Взаимные обвинения.</p>
-        <p><strong>Ресурсы:</strong> Кейс с листовками. Требовать результат без инструментов — значит провоцировать бунт.</p>
-    </section>
-
-    <section class="card task">
-        <div class="badge">Анализ улик</div>
-        <h2>Задание №1</h2>
-        <p>Вспомните администратора. Лера бросает фразу: <em>"Сложно было посмотреть инструкцию?"</em>. </p>
-        <p>Это секундное замечание стало точкой невозврата. Как вы считаете, какой механизм тут сработал?</p>
+        <h2>Объективные причины конфликтов</h2>
         
+        <h3>1. Отсутствие прозрачности зон ответственности</h3>
+        <p>Лера с командой запустили рекламу. За входящие заявки ответственен менеджер продаж. Но в группе ВК сообщения видит SMM-щик. Он не умеет их обрабатывать, не знает скриптов. Заявки висят, SMM-щик злится. Возникает конфликт.</p>
+        
+        <div class="neuro-box">
+            <span class="neuro-label">🧠 Мозг в этот момент</span>
+            Когда человек не понимает свою задачу или вынужден делать чужую, активируется <strong>передняя поясная кора</strong>. Она фиксирует "ошибку предсказания" и запускает чувство тревоги. Мозг SMM-щика переходит в режим защиты, а не созидания.
+        </div>
+
+        <h3>2. Непонятные или нереальные сроки</h3>
+        <p>Лера поставила задачу к понедельнику. На встрече выяснилось: только 2 человека из 7 готовы. Остальные не поняли сроки. Возникло недопонимание и неприятный осадок.</p>
+
+        <h3>3. Нехватка ресурсов</h3>
+        <p>Решили раздавать листовки, но промоутеров нет. Команда отказывается выходить к школам сама. Эффективный канал простаивает, все злятся.</p>
+    </section>
+
+    <section class="card">
+        <h2>Личные причины конфликтов</h2>
+        <p><strong>Отношения внутри:</strong> Ежедневные летучки и стендапы вымотали команду. Один из сотрудников устал: "Мы переливаем из пустого в порожнее". Коллеги перестают слышать друг друга.</p>
+        
+        <p><strong>Выгорание:</strong> Человек в постоянном стрессе может среагировать агрессией даже на безобидное замечание.</p>
+
+        <div class="quote">
+            Лера вымотана. Администратор ошибся в расписании. Лера: "Сложно было посмотреть инструкцию?"
+        </div>
+
+        <div class="neuro-box">
+            <span class="neuro-label">🧠 Нейрофизиология агрессии</span>
+            Фраза Леры — это <strong>социальная угроза</strong>. Для мозга администратора критика статуса приравнена к физической боли. В ответ включается <strong>миндалевидное тело (амигдала)</strong>, блокируя логику. Администратор физически не может "увидеть зоны роста" в этот момент.
+        </div>
+    </section>
+
+    <section class="card task-card">
+        <h3>Задание №1</h3>
+        <p><strong>Цель:</strong> Сформировать умение находить взаимосвязь причины конфликта с сутью ситуации.</p>
+        <p>Соотнеси причины конфликта с ситуациями в команде Леры.</p>
         <details>
-            <summary>Открыть отчет эксперта</summary>
-            <p><strong>Тип: Деструктивный.</strong></p>
-            <p>Это классический «удар по статусу». Вместо того чтобы решить проблему с расписанием (объективный уровень), Лера атаковала личность (субъективный уровень). В ответ мозг администратора включил режим «выживания», в котором сотрудничество невозможно.</p>
+            <summary>Проверить себя</summary>
+            <p>В ситуации с администратором — это деструктивный конфликт. Эмоции превалируют над делом. Конструктив был бы возможен, если бы Лера выяснила причины сложности и предложила помощь.</p>
         </details>
     </section>
 
     <section class="card">
-        <h2>02. Алгоритм выживания</h2>
-        <p>Если конфликт уже начался, логика бессильна. Вам нужен протокол.</p>
-        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=1000&q=80" alt="Технологический процесс">
-        <ol>
-            <li><strong>Пауза (2 минуты):</strong> Дайте химии в крови успокоиться.</li>
-            <li><strong>Фильтр оценок:</strong> Уберите "ты" и "всегда". Только факты.</li>
-            <li><strong>Вакуум:</strong> Дайте оппоненту выговориться до полной тишины.</li>
-            <li><strong>Радар:</strong> Задавайте уточняющие вопросы. Верните контроль логике.</li>
-            <li><strong>Эмпатия:</strong> Признайте ситуацию. Это не значит согласиться, это значит увидеть.</li>
-        </ol>
+        <h2>Алгоритм решения конфликта</h2>
+        <p>Как из деструктивного типа вывести ситуацию в конструктив:</p>
+        <img src="image_448170.png" alt="Алгоритм">
+        
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div><strong>Прожить эмоции.</strong> Дать себе и собеседнику пару минут выдохнуть.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div><strong>Доброжелательный настрой.</strong> Избегать оценочных суждений ("Скажи нормально").</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div><strong>Дать выговориться.</strong> Агрессия — сильная эмоция. Если её не подпитывать, она затухнет.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div><strong>Уточняющие вопросы.</strong> "Что конкретно произошло?". Когда человек начинает вспоминать шаги, <strong>включается префронтальная кора</strong>, и градус эмоций падает.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">5</div>
+                <div><strong>Признать ситуацию.</strong> "Я понимаю, ситуация неприятная".</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">6</div>
+                <div><strong>Сформулировать проблему вместе.</strong> Ищем решение, а не виноватого.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">7</div>
+                <div><strong>Предложить решения.</strong> Составить To-Do List.</div>
+            </div>
+        </div>
     </section>
 
-    <section class="summary-block">
-        <h3>Почему это работает?</h3>
-        <ul>
-            <li><strong>Саспенс:</strong> Мы упаковали обучение в формат расследования.</li>
-            <li><strong>Контраст:</strong> Дизайн подчеркивает остроту темы конфликта.</li>
-            <li><strong>Нейробиология:</strong> Мы не учим "быть добрыми", мы учим управлять физиологией спора.</li>
-        </ul>
+    <section class="card task-card" style="border-color: var(--accent-green);">
+        <h3>Итоговое задание</h3>
+        <p>1. Вспомни конфликт в своей команде.<br>2. Разложи его решение по пунктам нашего алгоритма.</p>
     </section>
+
+    <footer>
+        Разработано Валерией Иванцовой <br>
+    </footer>
 </div>
-
-<footer>
-    VALERIA IVANTSOVA | EDUCATIONAL ARCHITECTURE | 2026
-</footer>
 
 </body>
 </html>
