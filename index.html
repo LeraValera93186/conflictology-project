@@ -3,155 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Конфликт: Твоя точка роста</title>
+    <title>Учебный лонгрид: Конфликты</title>
     <style>
         :root {
-            --paper: #FCFAF8;
-            --ink: #1F2937;
-            --accent-blue: #2563EB;
-            --accent-red: #DC2626;
-            --note-bg: #FFFBEB;
+            --bg: #F9FAFB;
+            --text: #1F2937;
+            --accent: #2563EB;
+            --card: #FFFFFF;
             --border: #E5E7EB;
+            --neuro-bg: #F0F9FF;
         }
 
         body { 
-            font-family: 'Georgia', serif; 
-            line-height: 1.8; 
-            color: var(--ink); 
-            background: var(--paper); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            background: var(--bg); 
             margin: 0;
             padding: 0;
         }
 
-        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
 
-        header { border-bottom: 2px solid var(--ink); padding-bottom: 30px; margin-bottom: 50px; }
-        h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin: 0 0 15px 0; color: #000; }
-        .meta { font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #6B7280; }
+        header { margin-bottom: 40px; border-bottom: 2px solid var(--text); padding-bottom: 20px; }
+        h1 { font-size: 2rem; margin: 0 0 10px 0; color: #000; }
+        .meta { font-size: 0.9rem; color: #6B7280; font-weight: 600; }
 
-        .learning-goals { 
+        .goals-box { 
             background: #F3F4F6; 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-bottom: 40px;
+        }
+        .goals-box h2 { font-size: 1rem; margin-top: 0; text-transform: uppercase; color: var(--accent); }
+        .goals-box ul { margin: 10px 0 0 20px; padding: 0; }
+
+        .card { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
             padding: 30px; 
-            border-radius: 8px; 
-            margin-bottom: 50px;
-            font-family: 'Helvetica Neue', sans-serif;
+            border-radius: 12px; 
+            margin-bottom: 30px; 
         }
-        .learning-goals h4 { margin-top: 0; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-blue); }
 
-        .story-p { font-size: 1.2rem; margin-bottom: 25px; }
-
-        /* Стикеры с нейрофизиологией - доказательная база */
-        .neuro-note {
-            background: var(--note-bg);
-            border-left: 4px solid #F59E0B;
-            padding: 25px;
-            margin: 40px 0;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
-            font-family: 'Helvetica Neue', sans-serif;
+        .neuro-info {
+            background: var(--neuro-bg);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
             font-size: 0.95rem;
-            line-height: 1.5;
         }
-        .neuro-note b { color: #92400E; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.7rem; }
+        .neuro-info b { display: block; margin-bottom: 5px; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; }
 
-        h2 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.8rem; margin: 50px 0 20px; border-left: 10px solid var(--accent-blue); padding-left: 20px; }
-        h3 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.3rem; margin-top: 30px; }
+        h2 { font-size: 1.5rem; margin-bottom: 20px; color: #000; }
+        h3 { font-size: 1.2rem; margin-top: 0; color: var(--accent); }
 
-        .case-box { background: #fff; border: 1px solid var(--border); padding: 25px; border-radius: 12px; margin: 20px 0; }
-
-        /* Задания - интерактив */
         .task { 
-            background: var(--ink); 
+            background: #111827; 
             color: #fff; 
-            padding: 40px; 
-            border-radius: 16px; 
-            margin: 60px 0;
-            font-family: 'Helvetica Neue', sans-serif;
+            padding: 30px; 
+            border-radius: 12px; 
+            margin: 40px 0;
         }
-        .task h3 { color: var(--accent-blue); margin-top: 0; }
+        
+        details { cursor: pointer; margin-top: 15px; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; }
+        summary { font-weight: bold; }
 
-        details { cursor: pointer; margin-top: 20px; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; }
-        summary { font-weight: bold; font-size: 0.9rem; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; }
+        .step-num { color: var(--accent); font-weight: 800; font-size: 1.2rem; }
 
-        .algorithm-step { display: flex; gap: 20px; margin-bottom: 25px; }
-        .step-num { font-weight: 800; color: var(--accent-blue); font-size: 1.5rem; line-height: 1; }
-
-        footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.8rem; color: #9CA3AF; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #9CA3AF; border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <div class="meta">Практикум по коммуникациям / Валерия Иванцова</div>
-        <h1>Конфликт: Провал или Стимул?</h1>
+        <div class="meta">Учебный лонгрид / Валерия Иванцова</div>
+        <h1>Конфликт: провал или стимул к развитию?</h1>
     </header>
 
-    <section class="learning-goals">
-        <h4>Цели этого занятия:</h4>
-        <p style="margin:0; font-size: 0.95rem;">Мы разберем анатомию краха команды на реальном примере. Вы научитесь распознавать биологические триггеры агрессии и получите пошаговый алгоритм перевода «искр» в энергию развития.</p>
+    <section class="goals-box">
+        <h2>После изучения вы сможете:</h2>
+        <ul>
+            <li><strong>Различать</strong> рабочие и личные причины конфликтов.</li>
+            <li><strong>Объяснять</strong> свое поведение через реакции мозга.</li>
+            <li><strong>Применять</strong> алгоритм из 7 шагов для решения споров.</li>
+            <li><strong>Переводить</strong> деструктивные ссоры в конструктивные решения.</li>
+        </ul>
     </section>
 
-    <p class="story-p">Я руководила проектом по запуску детского образовательного центра. У меня была сильная команда, но через полгода я осталась одна. Почему? Мы не решали конфликты, мы в них тонули.</p>
+    <section class="card">
+        <h2>История Леры</h2>
+        <p>Лера запускала детский образовательный центр. У неё была сильная команда, но через полгода она осталась одна. Причина — конфликты, которые не решались, а копились.</p>
+        <p>Важно помнить: у конфликта всегда есть «скелет» (рабочие вопросы) и «эмоции» (личные чувства).</p>
+    </section>
 
-    <h2>01. Объективные причины</h2>
-    <p class="story-p">Конфликт — это не всегда про характер. Часто это про «кривую» систему.</p>
+    <section class="card">
+        <h2>1. Рабочие причины (Объективные)</h2>
+        
+        <h3>Зоны ответственности</h3>
+        <p>SMM-щик получал заявки из ВК, но не умел их обрабатывать. Лера видела лень, а SMM-щик злился, потому что это не его работа. 
+        <div class="neuro-info">
+            <b>Как реагирует мозг:</b> Когда задача непонятна, мозг видит в этом угрозу. Включается режим защиты, и человек перестает соображать.
+        </div></p>
 
-    <div class="case-box">
-        <strong>Кейс SMM:</strong> Заявки из ВК падали SMM-щику, который не умел их обрабатывать. Он злился, продажи стояли. Я видела лень, а на деле это была «серая зона» ответственности.
-    </div>
+        <h3>Ресурсы и сроки</h3>
+        <p>Команда не подготовилась к понедельнику, потому что не поняла дедлайн. А когда пришлось самим раздавать листовки (без промоутеров), начался бунт — у людей просто не было сил на лишнюю работу.</p>
+    </section>
 
-    <div class="neuro-note">
-        <b>Доказательная база:</b>
-        Когда зоны ответственности размыты, мозг фиксирует неопределенность как физическую угрозу. Активируется передняя поясная кора, блокируя креативность и включая режим «бей или беги».
-    </div>
-
-    <div class="case-box">
-        <strong>Кейс с листовками:</strong> Мы решили раздавать их сами, но ресурса у команды не было. Я ждала подвига, они — понимания. Конфликт возник из-за нехватки ресурсов для качественного релиза.
-    </div>
-
-    <h2>02. Личные причины: Биология боли</h2>
-    <p class="story-p">Я была вымотана. Когда администратор ошибся в расписании, я спросила: <i>«Сложно было посмотреть инструкцию?»</i>.</p>
-
-    <div class="neuro-note">
-        <b>Нейрофизиология:</b>
-        Эта фраза — прямая атака на социальный статус. В мозгу администратора вспыхнули те же зоны, что и при физической боли. В состоянии «боли» человек не способен на обучение или конструктив — только на защиту.
-    </div>
+    <section class="card">
+        <h2>2. Личные причины (Эмоции)</h2>
+        <p>Лера была вымотана и сорвалась на администратора из-за ошибки в расписании: <i>«Сложно было посмотреть инструкцию?»</i>.</p>
+        
+        <div class="neuro-info">
+            <b>Как реагирует мозг:</b> Критика «в лоб» воспринимается мозгом как физическая боль. Включается амигдала (центр страха), блокируя логику. Собеседник в этот момент физически не может признать ошибку.
+        </div>
+    </section>
 
     <section class="task">
-        <h3>Задание №1: Рефлексия</h3>
-        <p>Вспомните ситуацию, когда вы чувствовали несправедливое давление. Вспомните физическое ощущение: зажим в груди или жар? Это амигдала захватила власть над вашим разумом.</p>
-        <p><strong>Вопрос:</strong> Как вы думаете, какой тип конфликта (деструктивный или конструктивный) произошел у Леры с администратором?</p>
+        <h3>Задание 1: Проверка</h3>
+        <p>Как вы считаете, ситуация Леры с администратором — это деструктивный или конструктивный конфликт?</p>
         <details>
-            <summary>Разбор методолога</summary>
-            <p>Это деструктивный конфликт. Эмоции превалируют над делом, а оценочное суждение блокирует поиск решения. Конструктив возможен только через признание ситуации и совместный поиск выхода.</p>
+            <summary>Посмотреть ответ</summary>
+            <p>Деструктивный. Эмоции победили дело. Конструктив — это когда мы вместе ищем, как исправить расписание, а не обвиняем человека.</p>
         </details>
     </section>
 
-    <h2>03. Алгоритм: Путь к конструктиву</h2>
-    <p class="story-p">Через эти этапы деструктив можно вывести в стимул для развития:</p>
+    <section class="card">
+        <h2>Алгоритм: как договориться?</h2>
+        <div class="step"><span class="step-num">1</span><div><strong>Выдохните.</strong> Подождите пару минут, пока утихнут эмоции.</div></div>
+        <div class="step"><span class="step-num">2</span><div><strong>Будьте спокойны.</strong> Не оценивайте коллегу ("Ты не прав"), говорите о фактах ("В таблице ошибка").</div></div>
+        <div class="step"><span class="step-num">3</span><div><strong>Слушайте.</strong> Дайте другому высказаться, не перебивая.</div></div>
+        <div class="step"><span class="step-num">4</span><div><strong>Спрашивайте.</strong> "Что произошло по шагам?". Вопросы заставляют мозг думать логически.</div></div>
+        <div class="step"><span class="step-num">5</span><div><strong>Признайте проблему.</strong> "Да, ситуация неприятная, давай решать".</div></div>
+    </section>
 
-    <div class="algorithm-step">
-        <div class="step-num">1</div>
-        <div><strong>Осознание.</strong> Дайте себе 2 минуты. Нужно время, чтобы кортизол спал и включилась логика.</div>
-    </div>
-    <div class="algorithm-step">
-        <div class="step-num">2</div>
-        <div><strong>Доброжелательность.</strong> Уберите оценки. «В расписании ошибка» вместо «Ты ошибся».</div>
-    </div>
-    <div class="algorithm-step">
-        <div class="step-num">3</div>
-        <div><strong>Слушание.</strong> Дайте собеседнику выговориться. Агрессия — это энергия, она должна выгореть.</div>
-    </div>
-    <div class="algorithm-step">
-        <div class="step-num">4</div>
-        <div><strong>Вопросы.</strong> «Что произошло по шагам?». Анализ действий включает префронтальную кору мозга.</div>
-    </div>
-
-    <section class="task" style="border: 2px solid var(--accent-blue); background: none; color: var(--ink);">
-        <h3 style="color: var(--accent-blue);">Итоговое задание</h3>
-        <p>1. Вспомните недавний спор в своей команде.<br>
-           2. Опишите его по шагам алгоритма выше.</p>
-        <p><small>Критерий: прозрачность первопричины и последовательность шагов.</small></p>
+    <section class="task" style="background: none; border: 2px solid var(--accent); color: var(--text);">
+        <h3 style="color: var(--accent);">Итоговое задание</h3>
+        <p>Вспомните недавний спор на работе. Опишите его решение, используя наш алгоритм из 7 шагов.</p>
     </section>
 
     <footer>
